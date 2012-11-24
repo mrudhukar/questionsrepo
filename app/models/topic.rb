@@ -4,6 +4,6 @@ class Topic < ActiveRecord::Base
   has_many :objectives, dependent: :destroy
   has_many :questions, through: :objectives
 
-  validates :name, presence: true, uniqueness: { scope: :subject}
+  validates :name, presence: true, uniqueness: { scope: :subject_id}
   validates :subject, presence: true
 end

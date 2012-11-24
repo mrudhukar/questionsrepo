@@ -3,6 +3,10 @@ class Question < ActiveRecord::Base
     LOW = 0
     MEDIUM = 1
     HIGH = 2
+
+    V_TO_S = {Difficulty::LOW => "Low", Difficulty::MEDIUM => "Medium", Difficulty::HIGH => "HIGH"}
+    S_TO_V = {"Low" => Difficulty::LOW, "Medium" => Difficulty::MEDIUM, "HIGH" => Difficulty::HIGH}
+
   end
 
   belongs_to :objective
@@ -10,12 +14,11 @@ class Question < ActiveRecord::Base
   has_many :choices, dependent: :destroy
   has_one :answer, class_name: "Choice", conditions: {correct: true}
 
+  accepts_nested_attributes_for :choices, :allow_destroy => true
+
   validates :title, :objective, presence: true
   validates :difficulty, presence: true, inclusion: { in: [Difficulty::LOW, Difficulty::MEDIUM, Difficulty::HIGH]} 
 
-  # [:subject, :topic].each do |attribute|
-  #   delegate attribute, to: :objective
-  # end
   delegate :subject, to: :objective
   delegate :topic, to: :objective
 

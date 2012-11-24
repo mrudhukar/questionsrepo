@@ -37,3 +37,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 gem "therubyracer"
+
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'

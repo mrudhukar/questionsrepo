@@ -3,7 +3,7 @@ class Objective < ActiveRecord::Base
 
   has_many :questions, dependent: :destroy
 
-  validates :name, presence: true, uniqueness: { scope: :topic}
+  validates :name, presence: true, uniqueness: { scope: :topic_id}
   validates :topic, presence: true
 
   delegate :subject, to: :topic
