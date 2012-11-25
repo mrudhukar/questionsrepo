@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'exception_notification', :require => 'exception_notifier'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -40,3 +41,11 @@ gem "therubyracer"
 
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
+
+group :production do
+  gem 'pg'
+end
+
+group :development do
+  gem "letter_opener", :git => 'https://github.com/davidcornu/letter_opener.git'
+end
