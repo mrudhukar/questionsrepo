@@ -21,7 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'exception_notification', :require => 'exception_notifier'
+gem 'exception_notification', :require => 'exception_notifier', git: 'git://github.com/alanjds/exception_notification.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/alanjds/exception_notification.git
+  revision: 048fc6be972189e62ca3b9453d19233ec5773016
+  specs:
+    exception_notification (2.6.1)
+      actionmailer (>= 3.0.4)
+      tinder (~> 1.8)
+
+GIT
   remote: https://github.com/davidcornu/letter_opener.git
   revision: ead65b456e064ba7516bf693c190a68c08302374
   specs:
@@ -70,9 +78,6 @@ GEM
       warden (~> 1.2.1)
     erubis (2.7.0)
     eventmachine (1.0.0)
-    exception_notification (3.0.0)
-      actionmailer (>= 3.0.4)
-      tinder (~> 1.8)
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.8.4)
@@ -191,7 +196,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.2.1)
-  exception_notification
+  exception_notification!
   jquery-rails
   letter_opener!
   meta_search (>= 1.1.0.pre)
