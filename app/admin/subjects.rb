@@ -1,4 +1,5 @@
 ActiveAdmin.register Subject do
+  menu :priority => 1
   filter :name
 
   index do

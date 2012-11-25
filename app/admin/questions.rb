@@ -1,4 +1,5 @@
 ActiveAdmin.register Question do
+  menu :priority => 4
 
   scope :all, :default => true
   Subject.all.each do |subject|
