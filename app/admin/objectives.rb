@@ -1,11 +1,11 @@
 ActiveAdmin.register Objective do
 
   scope :all, :default => true
-  # Subject.all.each do |subject|
-  #   self.send(:scope, subject.name) do |objectives|
-  #     objectives.joins(:topic).where(:topics => {:subject_id => subject.id})
-  #   end
-  # end
+  Subject.all.each do |subject|
+    self.send(:scope, subject.name) do |objectives|
+      objectives.joins(:topic).where(:topics => {:subject_id => subject.id})
+    end
+  end
 
   filter :topic
   filter :name

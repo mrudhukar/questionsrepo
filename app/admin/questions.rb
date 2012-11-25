@@ -1,11 +1,11 @@
 ActiveAdmin.register Question do
 
   scope :all, :default => true
-  # Subject.all.each do |subject|
-  #   self.send(:scope, subject.name) do |questions|
-  #     questions.joins(:objective => :topic).where(:topics => {:subject_id => subject.id})
-  #   end
-  # end
+  Subject.all.each do |subject|
+    self.send(:scope, subject.name) do |questions|
+      questions.joins(:objective => :topic).where(:topics => {:subject_id => subject.id})
+    end
+  end
 
   filter :objective
   filter :title
